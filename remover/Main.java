@@ -5,10 +5,11 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void removeOggy(ArrayList<String> names) {
-        for (int i = 0; i < names.size(); i++) {
-            String toberemoved = "";
-            if (names.get(i).equals("Oggy")){
-                names.remove(i);
+        ArrayList<String> names_copy = new ArrayList<String>(names);
+        for (int i = 0; i < names_copy.size(); i++) {
+            String removed = names_copy.get(i);
+            if (removed.startsWith("oggy")) {
+                names.remove(removed);
             }
         }
         return;
