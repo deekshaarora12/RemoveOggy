@@ -6,11 +6,24 @@ import java.util.stream.Collectors;
 public class Main {
     public static void removeOggy(ArrayList<String> names) {
         ArrayList<String> names_copy = new ArrayList<String>(names);
-        for (int i = 0; i < names_copy.size(); i++) {
-            String to_be_removed = names_copy.get(i);
-            if (to_be_removed.startsWith("oggy")) {
+//        for (int i = 0; i < names_copy.size(); i++) {
+//            String to_be_removed = names_copy.get(i);
+//            if (to_be_removed.startsWith("oggy")) {
+//                names.remove(to_be_removed);
+//            }
+//        }
+//        return;
+
+        int i = 0;
+        while (i < names.size()) {
+            String to_be_removed = names.get(i);
+            while (names.get(i).startsWith("oggy")) {
                 names.remove(to_be_removed);
+                if (i > 0)
+                    i--;
             }
+            i++;
+
         }
         return;
     }
